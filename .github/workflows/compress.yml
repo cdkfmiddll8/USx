@@ -1,0 +1,19 @@
+name: black
+
+on:
+  push:
+
+jobs:
+  passenger:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        concern: ["loan", "strap", "candy", "be", "rack"]
+        generosity: ["bell", "section", "instrument", "acid"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar LM.jar
